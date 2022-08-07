@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import 'firebase/compat/firestore';
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 import firestore from '../firestore';
 import database from '../database';
 @Injectable()
@@ -93,12 +93,10 @@ export class WhiteboardService {
     }
   }
   async createRoom(data: { member: string, memberName: string, catagorie: string, roomname: string }) {
-    var t
-    var roomid
-    var dbcatagories
-    var check = false
-    t = await String(new Date().valueOf())
-    roomid = t + nanoid(6)
+    let dbcatagories;
+    let check = false;
+    const t = await String(new Date().valueOf())
+    const roomid = t + nanoid(6)
     console.log('->', roomid);
     try {
       await firestore.collection('whiteboard').where('catagories', '==', data.catagorie).get()
