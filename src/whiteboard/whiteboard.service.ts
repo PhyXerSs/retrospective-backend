@@ -286,33 +286,33 @@ database.ref('userRetrospective').on('value', (snap) => {
         console.log(err);
       }
 
-      if ((new Date().valueOf() - data.val().lastActive) / 1000 >= 86400) {
-        try {
-          database.ref(`userRetrospective/${data.key}`).remove()
-          database.ref(`retrospective/${data.val().room}/roomDetail/userInRoom/${data.key}`).remove()
-        }
-        catch (err) {
-          console.log(err);
-        }
-        //       if (datas.key == data.key) {
-        //         database.ref(`retrospective/${data.val().room}/roomDetail/userInRoom/${datas.key}`).remove()
-        //       } else if (check && num_mem >= 1) {
-        //         check = false
-        //         console.log('yes', datas.val(), data.val().room);
-        //         database.ref(`retrospective/${data.val().room}/roomDetail`).update({
+      // if ((new Date().valueOf() - data.val().lastActive) / 1000 >= 86400) {
+      //   try {
+      //     database.ref(`userRetrospective/${data.key}`).remove()
+      //     database.ref(`retrospective/${data.val().room}/roomDetail/userInRoom/${data.key}`).remove()
+      //   }
+      //   catch (err) {
+      //     console.log(err);
+      //   }
+      //   //       if (datas.key == data.key) {
+      //   //         database.ref(`retrospective/${data.val().room}/roomDetail/userInRoom/${datas.key}`).remove()
+      //   //       } else if (check && num_mem >= 1) {
+      //   //         check = false
+      //   //         console.log('yes', datas.val(), data.val().room);
+      //   //         database.ref(`retrospective/${data.val().room}/roomDetail`).update({
 
-        //           'createBy': datas.key
-        //         })
-        //       }
-        //       if (!num_mem) {
-        //         database.ref(`retrospective/${data.val().room}/roomDetail`).update({
-        //           'createBy': '-'
-        //         })
-        //       }
+      //   //           'createBy': datas.key
+      //   //         })
+      //   //       }
+      //   //       if (!num_mem) {
+      //   //         database.ref(`retrospective/${data.val().room}/roomDetail`).update({
+      //   //           'createBy': '-'
+      //   //         })
+      //   //       }
 
-        //     })
-        //   })
-      }
+      //   //     })
+      //   //   })
+      // }
 
     }
   })
